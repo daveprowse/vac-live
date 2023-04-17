@@ -9,14 +9,14 @@ Run the following commands:
 
 `vault token -help`
 
-View the subcommand options. Then:
+View the sub-command options. Then:
 
 `vault token create -help`
 
 Take a minute to view what the `vault token create` command does and examine the options. There are many. Focus your efforts on the `-ttl` and `use-limit` options for now.
 
 ## Create a token
-As you recall, we creating a token in a previous lab with a policy attached. This time we will create a token without specifying a policy.
+As you recall, we created a token in a previous lab with a policy attached. This time we will create a token without specifying a policy.
 
 `vault token create`
 
@@ -61,9 +61,7 @@ Set the VAULT_TOKEN value to our new environment variable, and run a command to 
 
 That was considered a "use" of the token. So now, in the results you should see it says: num_uses = 2. We only have two uses left. 
 
-> Note: Using the VAULT_TOKEN value is one way of running Vault commands (lookup, read, ??? Can you lookup information by accessor ID individually?write, etc...) as a particular token.
-
-Run the same command three more times. It should work for the first two (with the num_uses value decrementing by 1 each time). But the third time should fail and show a permission denied error. That is because we hit our use limit and the token has been revoked. 
+Run the same command three more times. It should work for the first two (with the num_uses value decrementing by 1 each time). But the third time should fail and show a permission denied error. That is because we hit our use limit and the token has been revoked.
 
 You can prove this by typing the following command:
 

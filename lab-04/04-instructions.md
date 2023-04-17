@@ -11,6 +11,10 @@ This is a longer lab than the previous ones. If you need to take a break or rest
 ## Start the Server and Unseal the Vault
 Make sure your terminal's working directory is lab-04. 
 
+Make a new directory for our data storage:
+
+`mkdir data`
+
 Review the vault-auth-config.hcl file. This is designed to start a basic vault using Raft storage and listen on the localhost IP address. 
 
 - Run the server with the following command:

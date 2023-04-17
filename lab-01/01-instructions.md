@@ -13,7 +13,7 @@ There are two options. Using a package manager for your operating system or inst
 
 **Option #1** - Install using your package manager.
 
-https://developer.hashicorp/vault/docs/install
+https://developer.hashicorp.com/vault/docs/install
 
 Locate your operating system and install Vault following the directions.
 
@@ -87,13 +87,13 @@ Link: https://marketplace.visualstudio.com/items?itemName=hashicorp.hcl
 
 > Note: If you plan to read these markdown files in preview mode, consider the Markdown Preview Github Styling extension:
 >
->Install: 
+>Install (Press `Ctrl+P`, then:) 
 >`ext install bierner.markdown-preview-github-styles`
 >
 >Link: https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles
 
 ## (Optional) Install a Vim Module
-If you use Vim, you might want to consider a syntax highlighting module or the HashiVim module. 
+If you use Vim, you might want to consider a syntax highlighting module (such as Polyglot) or the HashiVim module. 
 
 See the opt-01 directory for more information.
 
