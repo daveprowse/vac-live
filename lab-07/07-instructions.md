@@ -20,7 +20,7 @@ Take a minute to view what the `vault lease lookup` command does and examine the
 ## Log into the AWS console and create an access key
 Log in to the AWS console with a new, test user. Make sure that the user has zero access keys set up currently. 
 
-> Note: Make sure that you are using a test IAM user to log in with and not your main (or root) account. For more information on how to create a new IAM user, see this link: 
+> Note: Make sure that you are using a test IAM user (with admin rights) to log in with and not your main (or root) account. For more information on how to create a new IAM user, see this link: 
 
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html  
 

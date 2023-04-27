@@ -37,7 +37,7 @@ This should fail. Permission should be denied. While we have been given access t
 
 Export the root token as an environment variable:
 
-` export VAULT_TOKEN=<token_id>`
+` export VAULT_TOKEN=<token_id>`   
 
 The token_id was the one we used in the UI.
 
@@ -132,6 +132,10 @@ This should result in a message saying that no value was found. Remember, every 
 ## Working with the API
 Here we'll show some API functionality. Remember to use the `curl` command in Bash to consume the API. 
 
+First, export the root token so that we can work as root and have full access to the API:
+
+`export VAULT_TOKEN=root`
+
 ### Basic API usage
 
 Return back to a terminal that has a root connection. 
@@ -174,7 +178,7 @@ If you get a "permission denied" error, make sure you are:
 
 > Note: "data" is not necessary in paths that use KV version 1. But get in the habit of using it, because KV version 2 is the default. 
 
-If you didn't like the format of the results, remember, the API (and curl) is meant for machines, not humans. These commands will be used programmatically. However, for easier to read results during this lab, use jq. Simply add ` | jq` on to the end of your command. If you don't have ` export VAULT_TOKEN=root`it, install it with your package manager. (Example `sudo apt install jq`).
+If you didn't like the format of the results, remember, the API (and curl) is meant for machines, not humans. These commands will be used programmatically. However, for easier to read results during this lab, use jq. Simply add ` | jq` on to the end of your command. If you don't have it, install it with your package manager. (Example `sudo apt install jq`).
 
 Let's read the secret we just created. we'll use jq going forward. This time, we use the "GET" verb.
 
@@ -230,6 +234,24 @@ curl \
     http://127.0.0.1:8200/v1/auth/userpass/login/test_user2 | jq
 ```
 The results should show that test_user is logged in and has a lease that is renewable.
+
+Export the token for the user as USER_TOKEN:
+
+`export USER_TOKEN=<token_id>`
+
+Try viewing the secrets engines in Vault. It should result in a permission denied error:
+
+`VAULT_TOKEN=$USER_TOKEN vault secrets list`
+
+Now, try simply viewing the status of the Vault. This should work:
+
+`VAULT_TOKEN=$USER_TOKEN vault status`
+
+Try creating a secret (in the cubbyhole because we don't have access to anything else yet) and view the secret.
+
+`VAULT_TOKEN=$USER_TOKEN vault kv put -mount=cubbyhole secret1 this=that`
+
+`VAULT_TOKEN=$USER_TOKEN vault kv get -mount=cubbyhole secret1`
 
 ---
 ## *That was a lot! But you made it! Great job.*
