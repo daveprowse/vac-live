@@ -55,7 +55,13 @@ Copy the token ID (starting with hvs.) and paste it into the following command:
 
 ` export LIMITED_TOKEN="<token_id>"`
 
-Set the VAULT_TOKEN value to our new environment variable, and run a command to lookup that token:
+View the token data:
+
+`vault token lookup $LIMITED_TOKEN`
+
+That is not considered to be a use of the token. Look at the num_uses Key, it should show 3 in the Value column. 
+
+Now, set the VAULT_TOKEN value to our new environment variable, and run a command to lookup that token: 
 
 `VAULT_TOKEN=$LIMITED_TOKEN vault token lookup`
 

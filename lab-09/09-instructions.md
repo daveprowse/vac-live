@@ -1,16 +1,18 @@
 # Lab 09 - Vault UI and API
 In this lab we will pretend that we are end-users and machines. First, we'll show how end-users can access the UI. Then, we'll show how machines can be programmed to access the API. 
 
+> Note: Be sure to stop any previous vaults that were running before you continue with this lab.
+
 ## Start Vault
 Start the Vault dev server with the following command:
 
-`vault server -dev -dev-root-token-id=root`
+`vault server -dev`
 
 Then, export the Vault address and main Vault token as environment variables. (I suggest doing this in two terminals.)
 
 ` export VAULT_ADDR=http://127.0.0.1:8200`
 
-> Note: Do not export the root token yet.
+> Note: Do not export the root token ID yet.
 
 Verify that the Vault is running with a `vault status` command. 
 
@@ -50,7 +52,7 @@ You should see the cubbyhole, identity, secret/ and system secrets engines runni
 ### Enable Username & Password authentication
 Now, let's setup userpass authentication in the UI. 
 
-Go to the browser. You will see in the top menu that the root account can use Secrets, Access, Policies, and Tools. 
+Go to the browser. You will see in the main menu that the root account can use Secrets, Access, Policies, and Tools. 
 
 Click on "Access" now. By default, that places you in the "Auth Methods" section. 
 
@@ -95,7 +97,17 @@ Create a secret in the cubbyhole secrets engine now. Name it "test-secret". You 
 
 View the built-in CLI in the web browser. This can be found by clicking the drop down menu with the CLI icon in the upper right of the browser window. (It is to the left of the user icon.) From here you can run commands as you would in the regular terminal, but as the signed in user. 
 
-Sign out of the user account using the user icon drop down menu in the upper right. 
+Press the `?` to see the commands available to the user account.
+
+Try a few commands, for example:
+
+`read cubbyhole/test-secret`
+
+`fullscreen`
+
+`clear`
+
+When done, sign out of the user account using the user icon drop down menu in the upper right. 
 
 ### Sign in as the new user account in the CLI
 We just did several things in the UI. Let's show some CLI equivalents. (Some of these will be review.)
@@ -106,11 +118,13 @@ In the terminal, do the following:
 
 That should show the name of the new user account you created. 
 
-Now, in a *new* terminal sign in as that user. (export the Vault address if necessary.)
+Now, in a *new* terminal sign in as that user. 
 
 `vault login -method=userpass username=<username>`
 
 Type in your password and you should be connected as the new user. 
+
+Export the token ID as an environment variable with the `export` command.
 
 Now, attempt to look at the secrets engines available to you:
 
@@ -134,7 +148,7 @@ Here we'll show some API functionality. Remember to use the `curl` command in Ba
 
 First, export the root token so that we can work as root and have full access to the API:
 
-`export VAULT_TOKEN=root`
+`export VAULT_TOKEN=<token_id>`
 
 ### Basic API usage
 
@@ -216,7 +230,7 @@ curl \
     http://127.0.0.1:8200/v1/auth/userpass/users/test_user2 | jq
 ```
 
-That should create a new user named "test_user".
+That should create a new user named "test_user2".
 
 Display the details of that user:
 

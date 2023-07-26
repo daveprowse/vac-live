@@ -16,11 +16,11 @@ Create the directory path vault/data. For example:
 The "data" directory will house the vault's data! Be sure to point to it in the configuration file.
 
 ## Build a Vault configuration file
-Copy the configuration from code.txt to a new file named config.hcl. 
+Copy the configuration from **code.txt** to a new file named **config.hcl**. 
 
 Find the three instances where it says "your_IP_address" and modify it to your system's actual IP address.
 
-> Note: to find this in Linux, type `ip a`. In macOS, `ifconfig`. In Windows `ipconfig` or use whatever GUI-based method you prefer. 
+> Note: to find this in Linux, type `ip a`. In macOS, `ifconfig`. In Windows `ipconfig` or, in all cases, use whatever GUI-based method you prefer. 
 
 Save the file.
 

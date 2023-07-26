@@ -84,6 +84,8 @@ Now, display the new ADMIN_TOKEN that we just created:
 
 You should see a system token (starts with .hvs) that was created when we issued the previous command. 
 
+> Note: You could have also issued the `vault token lookup $ADMIN_TOKEN` command to view the token and its details.
+
 ## View capabilities (permissions) of a token
 Now, view the capabilities of the token we created using the environment variable.
 

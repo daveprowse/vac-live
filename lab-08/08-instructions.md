@@ -1,8 +1,12 @@
 # Lab 08 - Secrets Engines
 In this lab we will work with the default secrets engines in Vault including cubbyhole, identity, kv, and system. 
 
+> Note: To save time, use the vault from the previous lab. If you do, skip the first step. But remember that the vault will have the AWS secrets engine enabled.
+
 ## Start Vault
-Start a dev Vault. If you wish, you can use the "root" Vault token for simplicity. To do so, follow the instructions below:
+Start a dev Vault. 
+
+If you wish, you can use the "root" Vault token for simplicity. To do so, follow the instructions below:
 
 > REMEMBER! Do not do this in production. This is for Vault -dev servers only.
 

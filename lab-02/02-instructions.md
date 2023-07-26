@@ -105,7 +105,15 @@ Click on the "Token" method.
 
 Enter the token for root.
 
-Create a new secret in the KV engine. The steps to do this in the UI are the same as in the CLI, but it's all point and click.
+## Create a new secret in the UI
+
+Create a new secret (color-C) in the KV engine. 
+
+> Note: The steps to do this in the UI are the same as in the CLI, but it's all point and click. 
+
+Be sure to save when done. 
+
+View both secrets in the UI and in the CLI
 
 ## Stop the dev server
 In the original terminal where the dev vault is running, press <kbd>Ctrl+C</kbd>.

@@ -93,11 +93,10 @@ Create a new user by making use of the `vault write` command.
 
 ```bash
 vault write auth/userpass/users/test_user \
-password=<your-password>
-policies=admins
+password=<your-password> \
 ```
 
-That will create a user named "test_user" with the password you supply. The user will have access to the system as an admin.
+That will create a user named "test_user" with the password you supply. This user will have extremely limited access to the system.
 
 To find out information about the user:
 
@@ -149,7 +148,7 @@ At this point the user can work with secrets engines (as long as the user has pe
 Sign out from the UI
 
 ## Accessing information via the API
-To see create a user via the API, type the following:
+To see a user's details via the API, type the following:
 
 ```bash
 curl \
