@@ -86,7 +86,7 @@ When you do so, base64 should decode that to the original email address you orig
 
 > Note: There are other encoding methods available such as hex, base36, and so on. However, base64 is an accepted standard.
 
-> IMPORTANT! Don't confuse encoding with encryption. We use encoding to store information as a certain data type. However, it does not use a key. Anyone with access to the base64 command can decode text. It is not encryption and is not a substitute. Actual encryption methods use a key (which should be kept separate). Take a look at the different between your bas64 encoded plaintext and the actual ciphertext (starting with "vault:v1:")
+> IMPORTANT! Don't confuse encoding with encryption. We use encoding to store information as a certain data type. However, it does not use a key. Anyone with access to the base64 command can decode text. It is not encryption and is not a substitute. Actual encryption methods use a key (which should be kept separate). Take a look at the difference between your base64 encoded plaintext and the actual ciphertext (starting with "vault:v1:")
 
 When it comes to security and encryption, we could go on and on. But that's a good start.
 
